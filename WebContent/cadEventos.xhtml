@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<ui:composition template="/recursos/template/template.xhtml">
+		<ui:define name="tituloPrincipal">
+			Cadastro de Eventos
+		</ui:define>
+		<ui:define name="botoesAcao">
+			<p:commandButton value="Cadastrar" action="#{eventoBean.cadastrarEvento()}"
+				update="@form"/>				
+		</ui:define>
+						
+		<ui:define name="conteudo">
+			<h:panelGrid columns="3">
+			
+			<p:outputLabel for="nome_evento" value="Nome do evento:" />
+			<p:inputText id="nome_evento" value="#{eventoBean.evento.nomeEvento}"/>
+			<p:message for="nome_evento" />
+									
+			<p:outputLabel for="dataEvento" value="Data de Expiração:"/>
+			<p:calendar id="dataEvento" value="#{eventoBean.evento.dataEvento}" />
+			<p:messages for="dataEvento"/>
+			
+			<p:outputLabel for="time" value="Horario:"/>
+			<p:calendar id="time" value="#{eventoBean.evento.horaEvento}" pattern="HH:mm" timeOnly="true" />
+			
+			<h:outputText value="#{eventoBean.evento.horaEvento}">
+				<f:convertDateTime pattern="HH:mm"/>
+			</h:outputText>
+			
+			<p:outputLabel for="nome_local" value="Local:" />
+			<p:inputText id="nome_local" value="#{eventoBean.evento.nomeLocal}"/>
+			<p:message for="nome_local" />			
+			
+							
+			</h:panelGrid>
+			
+		</ui:define>
+		
+		
+	</ui:composition>
+</html> 
+

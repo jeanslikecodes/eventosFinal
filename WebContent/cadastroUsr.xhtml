@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+      <ui:composition template="/recursos/template/template2.xhtml">
+		<ui:define name="tituloPrincipal">
+			Cadastro de Usuarios
+		</ui:define>
+		<ui:define name="botoesAcao">
+			<p:commandButton value="Cadastrar" action="#{usrBean.cadastrarUsr()}"	
+				update="@form"/>				
+		</ui:define>
+						
+		<ui:define name="conteudo">
+			<h:panelGrid columns="3">
+			
+			<p:outputLabel for="nome_usr" value="Nome:" />
+			<p:inputText id="nome_usr" value="#{usrBean.usr.nome}"/>
+			<p:message for="nome_usr" />
+									
+			<p:outputLabel for="sobrenome" value="Sobrenome:"/>
+			<p:inputText id="sobrenome" value="#{usrBean.usr.sobrenome}" />
+			<p:messages for="sobrenome"/>
+			
+			<p:outputLabel for="username" value="Username:"/>
+			<p:inputText id="username" value="#{usrBean.usr.username}" />
+			<p:messages for="username"/>
+			
+			<p:outputLabel for="dataNasc" value="Data de nascimento:"/>
+			<p:calendar id="dataNasc" value="#{usrBean.usr.dataNasc}" pattern="dd-MM-yyyy" mask="true" />
+			<p:messages for="dataNasc"/>
+			
+			<p:outputLabel for="email" value="E-mail:"/>
+			<p:inputText id="email" value="#{usrBean.usr.email}" />
+			<p:messages for="email"/>
+			
+			<p:outputLabel for="senha" value="Senha:"/>
+			<p:password id="senha" value="#{usrBean.usr.senha}" />
+			<p:messages for="senha"/>
+			
+							
+			</h:panelGrid>
+			
+		</ui:define>
+		
+		
+	</ui:composition>
+</html> 
+      
+
+	

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+            
+	<ui:composition template="/recursos/template/template.xhtml">
+		<ui:define name="tituloPrincipal">
+			Lista de Eventos
+		</ui:define>
+		
+		<ui:define name="conteudo">
+		<p:dataTable value="#{eventoBean.listaEvento}" var="eventos">
+			<p:column headerText="Eventos">
+				<h:outputText value="#{eventos.nomeEvento}" />
+
+			</p:column>
+
+		 	<p:column headerText="Data Evento">
+				<h:outputText value="#{eventos.dataEvento}" />
+			</p:column>
+
+			<p:column headerText="Hora do Evento">
+				<h:outputText value="#{eventos.horaEvento}">
+					<f:convertDateTime pattern="HH:mm" />
+				</h:outputText>
+			</p:column>
+
+			<p:column headerText="Nome do local">
+				<h:outputText value="#{eventos.nomeLocal}" />
+			</p:column>
+
+
+			<p:column headerText="Acões">
+				<p:commandButton value="Excluir"
+					action="#{eventoBean.removerEvento(eventos)}" immediate="true"
+					update="@form" />
+			</p:column>
+
+
+		</p:dataTable>
+	</ui:define>
+	</ui:composition>
+</html>

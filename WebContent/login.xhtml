@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="recursos/template/template2.xhtml">
+	
+	<ui:define name="tituloPagina">Resistência Cultural</ui:define>
+	<ui:define name="tituloPrincipal">Efetue Login</ui:define>
+	
+
+		<ui:define name="botoesAcao">
+			<p:commandButton value="Entrar"  update="@form"/>
+			<p:commandButton value="Cadastre-se"  href="cadastroUsr.xhtml"/>
+
+				
+								
+		</ui:define>
+						
+		<ui:define name="conteudo">
+			<h:panelGrid columns="3">
+			
+			<p:outputLabel for="username" value="Username:" />
+			<p:inputText id="username" value="#{logarFrm.username}"/>
+			<p:message for="username" />
+									
+			<p:outputLabel for="senha" value="Senha" />
+			<p:password id="senha" value="#{logarFrm.senha}"/>
+			<p:message for="senha" />
+			
+							
+			</h:panelGrid>
+			
+		</ui:define>	
+	
+	</ui:composition>
+</html>
