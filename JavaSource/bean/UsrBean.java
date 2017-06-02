@@ -37,8 +37,6 @@ public class UsrBean implements Serializable{
 		this.listUsuario = new ArrayList<Usuario>();
 	}
 	
-	
-	
 	public void cadastrarUsr(){
 		try{
 			this.servicousr.cadastrarUsuario(this.usuario);
@@ -57,6 +55,17 @@ public class UsrBean implements Serializable{
 	public void removerUsr(Usuario usuario){
 		this.servicousr.remover(usuario);
 		Messages.create("Usuario Removido com sucesso");
+	}
+	
+	public String login() {
+		this.servicousr.verificaUsuario(this.usuario);
+
+		if (servicousr.verificaUsuario(this.usuario) == true) {
+			return "cadEventos.xhtml";
+		} else {
+			return "Erro.xhtml";
+		}
+		
 	}
 	
 

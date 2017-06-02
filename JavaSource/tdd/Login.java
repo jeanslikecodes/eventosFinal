@@ -1,29 +1,31 @@
-package servico;
+package tdd;
 
-import javax.ejb.Stateless;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+
+import org.junit.Test;
+
 
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-
 import entidade.Usuario;
 
+public class Login {
 
-@Named
-@Stateless
-public class ServicoUsuario {
-	
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public Usuario cadastrarUsuario(Usuario usuario){
-		this.entityManager.persist(usuario);
-		return usuario;
-	}
 	
+	@Test
+	public void testarVerificaUsuario() {
+		Usuario usuario =  new Usuario();
+		
+		usuario.setUsername("jeans");
+		usuario.setSenha("jeans");
+	}
 	
 	public boolean verificaUsuario(Usuario usuario){
 		try {
@@ -38,14 +40,4 @@ public class ServicoUsuario {
 	     }
 		
 	}
-	    
-	
-	public void remover(Usuario usuario){
-		this.entityManager.remove(this.entityManager.merge(usuario));
-	}
-
-	
-	//Alterar dados do usuario	
-	
-
 }
