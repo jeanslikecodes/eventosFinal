@@ -14,29 +14,29 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@ManagedBean(name="logarFrm")
+@ManagedBean
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@NotBlank
+
 	private String username;
 	
-	@NotBlank
+	//@NotBlank
 	private String email;
 	
-	@NotBlank
+	//@NotBlank
 	private String nome;
 	
-	@NotBlank
+	//@NotBlank
 	private String sobrenome;
 	
-	@NotBlank
+
 	protected String senha;
 	
-	@NotNull
+	//@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date dataNasc;
 	

@@ -12,23 +12,25 @@
 	
 
 		<ui:define name="botoesAcao">
-			<p:commandButton value="Entrar" action="#{usrBean.login()}" update="@form"/>
-			<p:commandButton value="Cadastre-se" />
 
+			<p:commandButton value="Entrar" action="#{usrBean.verificaLogin()}" update="@form"/>
+			<p:commandButton value="Cadastre-se" action="cadastroUsr.xhtml" update="@form" />
+			
 				
 								
 		</ui:define>
 						
 		<ui:define name="conteudo">
-			<h:panelGrid columns="3">
+		<h:panelGrid columns="3">
 			
 			<p:outputLabel for="username" value="Username:" />
-			<p:inputText id="username" value="#{logarFrm.username}"/>
+			<p:inputText id="username" value="#{usrBean.usr.username}"/>
 			<p:message for="username" />
 									
 			<p:outputLabel for="senha" value="Senha" />
-			<p:password id="senha" value="#{logarFrm.senha}"/>
+			<p:password id="senha" value="#{usrBean.usr.senha}"/>
 			<p:message for="senha" />
+			
 			
 							
 			</h:panelGrid>

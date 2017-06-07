@@ -1,16 +1,14 @@
 package tdd;
 
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.junit.Test;
 
 
-import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+
 import entidade.Usuario;
 
 public class Login {
@@ -24,7 +22,7 @@ public class Login {
 		Usuario usuario =  new Usuario();
 		
 		usuario.setUsername("jeans");
-		usuario.setSenha("jeans");
+		usuario.setSenha("jeans111");
 	}
 	
 	public boolean verificaUsuario(Usuario usuario){

@@ -28,7 +28,7 @@ public class ServicoUsuario {
 	public boolean verificaUsuario(Usuario usuario){
 		try {
 			Query query = this.entityManager.createQuery(
-					"SELECT u from Usuario u where u.username = :username and u.senha = :senha");
+					"SELECT u from PUBLIC.USUARIO u where u.username = :username and u.senha = :senha");
 			query.setParameter("name" , usuario.getUsername());
 			query.setParameter("senha", usuario.getSenha()).getSingleResult();
 

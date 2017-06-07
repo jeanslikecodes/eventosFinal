@@ -47,7 +47,9 @@ public class EventoBean implements Serializable {
 			this.evento = new EventoEnt();			
 			FacesMessage msg = new FacesMessage("Evento Cadastrado Com Sucesso!");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
-			}catch (Exception e) {
+			
+			}
+		catch (Exception e) {
 			FacesMessage msg = new FacesMessage(e.getMessage());
 			msg.setSeverity(FacesMessage.SEVERITY_WARN);
 			FacesContext.getCurrentInstance().addMessage(null, msg);
