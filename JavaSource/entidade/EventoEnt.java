@@ -23,7 +23,6 @@ import org.primefaces.model.map.MapModel;
 import org.primefaces.model.map.Marker;
 
 @Entity
-@ManagedBean
 public class EventoEnt implements Serializable {
 
 	private static final long serialVersionUID = -2659553963594409972L;

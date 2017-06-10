@@ -13,7 +13,7 @@
 //import servico.ServicoEvento;
 //
 //@Path("/eventorest")
-//public class EventoRest {
+//public class EventoRest2 {
 //
 //	@POST
 //	@Consumes(MediaType.APPLICATION_JSON)
