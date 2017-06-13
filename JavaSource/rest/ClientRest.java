@@ -31,7 +31,7 @@ public class ClientRest{
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Usuario> listarUsuario(){
 		try{
-			return new ServicoUsuario().listarUsuario();
+			return new ServicoUsuario().listarTodos();
 		}catch (Exception e) {
 			e.printStackTrace();
 			//e.getMessage();

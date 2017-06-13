@@ -36,11 +36,11 @@ public class ServicoUsuario {
 
 	}
 
-	public List<Usuario> listarUsuario() {
-		Query query = this.entityManager.createQuery("from Usuario");
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listarTodos(){
+		Query query = this.entityManager.createQuery("FROM Usuario u");
 		return query.getResultList();
 	}
-
 	public void remover(Usuario usuario) {
 		this.entityManager.remove(this.entityManager.merge(usuario));
 	}

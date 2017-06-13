@@ -2,7 +2,6 @@ package entidade;
 
 import java.util.Date;
 
-import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
