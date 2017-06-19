@@ -42,26 +42,7 @@ public class EventoEnt implements Serializable {
 	private Date horaEvento;
 
 	private String nomeLocal;
-	@Transient
-	private MapModel emptyModel;
-
-	private double lat;
-
-	private double lng;
-
-	@PostConstruct
-	public void init() {
-		emptyModel = new DefaultMapModel();
-	}
-
-	public MapModel getEmptymodel() {
-		return emptyModel;
-	}
-
-	public void setEmptymodel(MapModel emptymodel) {
-		this.emptyModel = emptymodel;
-	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -102,30 +83,7 @@ public class EventoEnt implements Serializable {
 		this.nomeLocal = nomeLocal;
 	}
 
-	public double getLat() {
-		return lat;
-	}
-
-	public void setLat(double lat) {
-		this.lat = lat;
-	}
-
-	public double getLng() {
-		return lng;
-	}
-
-	public void setLng(double lng) {
-		this.lng = lng;
-	}
-
-	public void addMarker() {
-		Marker marker = new Marker(new LatLng(lat, lng), nomeLocal);
-		emptyModel.addOverlay(marker);
-
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
-				"Local Adcionado com sucesso", "Lat:" + lat + "Lng" + lng));
-	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
